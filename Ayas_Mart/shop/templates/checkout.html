@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Ayas Mart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar-brand {
+            letter-spacing: 1px;
+        }
+        .card {
+            border-radius: 15px;
+        }
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+            padding: 12px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-white border-bottom p-3 mb-5 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark" href="/">🛒 AYAS MART</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow p-4 mb-5 bg-white">
+                    <h3 class="fw-bold text-center mb-4 text-dark">Delivery Details 🚚</h3>
+                    <hr>
+                    
+                    <form action="{% url 'order_success' %}" method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-secondary">आपका नाम (Full Name)</label>
+                            <input type="text" class="form-control form-control-lg" placeholder="अपना नाम लिखें" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-secondary">मोबाइल नंबर (Phone Number)</label>
+                            <input type="tel" class="form-control form-control-lg" placeholder="00000 00000" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-secondary">पूरा पता (Full Address)</label>
+                            <textarea class="form-control form-control-lg" rows="3" placeholder="मकान नंबर, गली, शहर, पिनकोड..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success w-100 fw-bold shadow-sm">Order Confirm Karen 🚀</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
