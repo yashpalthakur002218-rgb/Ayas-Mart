@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mkku+v^#yg_l(n*)!ly@wh1%+kl4j0^jgt84#j%!_+m#56-^fu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ayas-mart-1.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
